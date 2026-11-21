@@ -1,0 +1,31 @@
+id,nama,alamat,kota,jenis,latitude,longitude
+DIY-01,Stadion Mandala Krida,"Jl. Kemuning, Semaki, Kec. Umbulharjo, Kota Yogyakarta, DIY 55166",Kota Yogyakarta,Sepakbola,-7.7959,110.3881
+DIY-02,Stadion Kridosono,"Jl. Yos Sudarso No. 9, Kotabaru, Kec. Gondokusuman, Kota Yogyakarta, DIY 55224",Kota Yogyakarta,Sepakbola,-7.7876,110.3736
+DIY-03,Telaga Futsal 1,"Jl. Letjen Suprapto No. 72, Ngampilan, Kec. Ngampilan, Kota Yogyakarta, DIY 55261",Kota Yogyakarta,Futsal,-7.8005,110.3563
+DIY-04,Bardosono Happy Futsal,"Jl. Ngeksigondo No. 54, Prenggan, Kec. Kotagede, Kota Yogyakarta, DIY 55172",Kota Yogyakarta,Futsal,-7.8213,110.3976
+DIY-05,4R Futsal,"Jl. Parangtritis Km 3,5, Brontokusuman, Kec. Mergangsan, Kota Yogyakarta, DIY 55153",Kota Yogyakarta,Futsal,-7.8245,110.3688
+DIY-06,Lapangan Sepakbola Karangwaru,"Jl. Magelang Km 2, Karangwaru, Kec. Tegalrejo, Kota Yogyakarta, DIY 55241",Kota Yogyakarta,Sepakbola,-7.7728,110.3614
+DIY-07,Lapangan Sepakbola Minggiran,"Jl. Minggiran, Suryodiningratan, Kec. Mantrijeron, Kota Yogyakarta, DIY 55141",Kota Yogyakarta,Sepakbola,-7.8194,110.3592
+DIY-08,Lapangan Sepakbola Sidokabul,"Jl. Sidokabul, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, DIY 55162",Kota Yogyakarta,Sepakbola,-7.8219,110.3795
+DIY-09,Lapangan Kenari,"Jl. Kenari, Semaki, Kec. Umbulharjo, Kota Yogyakarta, DIY 55166",Kota Yogyakarta,Sepakbola,-7.7988,110.3921
+DIY-10,Tifosi Futsal Jogja,"Jl. Kusumanegara No. 116, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, DIY 55165",Kota Yogyakarta,Futsal,-7.8024,110.3932
+DIY-11,Bintang Futsal Jogja,"Jl. Menteri Supeno No. 88, Pandeyan, Kec. Umbulharjo, Kota Yogyakarta, DIY 55161",Kota Yogyakarta,Futsal,-7.8153,110.3867
+DIY-12,Puma Futsal,"Jl. Veteran No. 152, Pandeyan, Kec. Umbulharjo, Kota Yogyakarta, DIY 55161",Kota Yogyakarta,Futsal,-7.8115,110.3908
+DIY-13,Stadion Maguwoharjo,"Jl. Kepuhsari, Jenengan, Maguwoharjo, Kec. Depok, Kabupaten Sleman, DIY 55281",Kabupaten Sleman,Sepakbola,-7.7647,110.4278
+DIY-14,Kompleks Olahraga UNY (Stadion & GOR),"Jl. Colombo No. 1, Karangmalang, Caturtunggal, Kec. Depok, Kabupaten Sleman, DIY 55281",Kabupaten Sleman,Keduanya,-7.7751,110.3853
+DIY-15,Lapangan Sepakbola Pancasila UGM,"Jl. Pancasila, Bulaksumur, Caturtunggal, Kec. Depok, Kabupaten Sleman, DIY 55281",Kabupaten Sleman,Sepakbola,-7.7745,110.3765
+DIY-16,Lapangan Sepakbola Klebengan,"Jl. Agro, Karangmalang, Caturtunggal, Kec. Depok, Kabupaten Sleman, DIY 55281",Kabupaten Sleman,Sepakbola,-7.7758,110.3879
+DIY-17,Planet Futsal Yogyakarta,"Jl. Ringroad Utara No. 168, Ngringin, Condongcatur, Kec. Depok, Kabupaten Sleman, DIY 55283",Kabupaten Sleman,Futsal,-7.7568,110.4025
+DIY-18,Centro Futsal,"Jl. Damai, Mudal, Sariharjo, Kec. Ngaglik, Kabupaten Sleman, DIY 55581",Kabupaten Sleman,Futsal,-7.7345,110.3821
+DIY-19,Jakal 7 Futsal,"Jl. Kaliurang Km 7,2, Kayen, Condongcatur, Kec. Depok, Kabupaten Sleman, DIY 55283",Kabupaten Sleman,Futsal,-7.7458,110.3895
+DIY-20,Telaga Futsal 3,"Jl. Tambak Bayan No. 7, Janti, Caturtunggal, Kec. Depok, Kabupaten Sleman, DIY 55281",Kabupaten Sleman,Futsal,-7.7788,110.4132
+DIY-21,Kompleks Stadion Tridadi,"Jl. Parasamya, Beran Lor, Tridadi, Kec. Sleman, Kabupaten Sleman, DIY 55511",Kabupaten Sleman,Keduanya,-7.7176,110.3548
+DIY-22,Golden Goal Futsal,"Jl. Magelang Km 5,8, Kutu Tegal, Sinduadi, Kec. Mlati, Kabupaten Sleman, DIY 55284",Kabupaten Sleman,Futsal,-7.7525,110.3621
+DIY-23,Forza Futsal,"Jl. Raya Tajem, Kenayan, Wedomartani, Kec. Ngemplak, Kabupaten Sleman, DIY 55584",Kabupaten Sleman,Futsal,-7.7389,110.4318
+DIY-24,Stadion UII,"Jl. Kaliurang Km 14,5, Krawitan, Umbulmartani, Kec. Ngemplak, Kabupaten Sleman, DIY 55584",Kabupaten Sleman,Sepakbola,-7.6875,110.4138
+DIY-25,Lapangan Sepakbola Denggung,"Jl. Magelang Km 9,5, Denggung, Tridadi, Kec. Sleman, Kabupaten Sleman, DIY 55511",Kabupaten Sleman,Sepakbola,-7.7192,110.3568
+DIY-26,Score Futsal Seturan,"Jl. Seturan Raya, Kledokan, Caturtunggal, Kec. Depok, Kabupaten Sleman, DIY 55281",Kabupaten Sleman,Futsal,-7.7712,110.4104
+DIY-27,Champion Futsal,"Jl. Palagan Tentara Pelajar Km 7, Mudal, Sariharjo, Kec. Ngaglik, Kabupaten Sleman, DIY 55581",Kabupaten Sleman,Futsal,-7.7356,110.3752
+DIY-28,"Lapangan Sepakbola UPN ""Veteran"" Yogyakarta","Jl. Padjajaran (Ringroad Utara), Ngropoh, Condongcatur, Kec. Depok, Kabupaten Sleman, DIY 55283",Kabupaten Sleman,Sepakbola,-7.7628,110.4092
+DIY-29,Lapangan Sepakbola Gamping,"Jl. Wates Km 5, Ambarketawang, Kec. Gamping, Kabupaten Sleman, DIY 55294",Kabupaten Sleman,Sepakbola,-7.8016,110.3235
+DIY-30,Bima Futsal,"Jl. Godean Km 4,5, Banyuraden, Kec. Gamping, Kabupaten Sleman, DIY 55293",Kabupaten Sleman,Futsal,-7.7782,110.3346

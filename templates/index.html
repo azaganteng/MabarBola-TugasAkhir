@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MabarBola — Cari Lapangan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="/" aria-label="MabarBola beranda">
+      <span class="brand-mark">✦</span>
+      <span>Mabar<span class="brand-accent">Bola</span></span>
+    </a>
+    <nav>
+      <a class="active" href="#lapangan">Lapangan</a>
+      <a href="#tentang">Tentang</a>
+    </nav>
+    <button class="location-button" id="locate-button" type="button">⌖ <span>Lokasi saya</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Yogyakarta &amp; Sleman</p>
+        <h1>Temukan lapangan.<br><em>Mulai mabar.</em></h1>
+        <p class="hero-text">Cari tempat bermain sepakbola dan futsal terdekat untuk pertandingan berikutnya.</p>
+      </div>
+      <div class="hero-ball" aria-hidden="true">⚽</div>
+    </section>
+
+    <section class="content" id="lapangan">
+      <aside class="venue-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">Peta lapangan</p>
+            <h2>Di mana kita main?</h2>
+          </div>
+          <span class="count-badge" id="venue-count">0</span>
+        </div>
+
+        <div class="filters">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="search-input" type="search" placeholder="Cari nama atau alamat..." autocomplete="off">
+          </label>
+          <div class="filter-buttons" role="group" aria-label="Filter jenis lapangan">
+            <button class="filter-button active" data-type="Semua" type="button">Semua</button>
+            <button class="filter-button" data-type="Futsal" type="button">Futsal</button>
+            <button class="filter-button" data-type="Sepakbola" type="button">Sepakbola</button>
+          </div>
+        </div>
+
+        <div class="venue-list" id="venue-list" aria-live="polite">
+          <div class="loading">Memuat lapangan...</div>
+        </div>
+      </aside>
+      <div class="map-wrap">
+        <div id="map" aria-label="Peta lokasi lapangan sepakbola dan futsal"></div>
+        <div class="map-note">© OpenStreetMap contributors</div>
+      </div>
+    </section>
+
+    <section class="info-strip" id="tentang">
+      <div><span class="info-icon">◎</span><strong>30 lokasi</strong><span>di Yogyakarta &amp; Sleman</span></div>
+      <div><span class="info-icon">⚽</span><strong>Sepakbola &amp; futsal</strong><span>untuk semua gaya bermain</span></div>
+      <div><span class="info-icon">✦</span><strong>Siap mabar?</strong><span>Temukan tempatnya sekarang</span></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+</body>
+</html>
