@@ -3,76 +3,109 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MabarBola — Cari Lapangan</title>
+  <meta name="description" content="MabarBola — cari teman dan tempat bermain sepakbola atau futsal di Yogyakarta.">
+  <title>MabarBola — Teman Mainmu Ada di Sini</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <header class="navbar">
-    <a class="brand" href="/" aria-label="MabarBola beranda">
-      <span class="brand-mark">✦</span>
-      <span>Mabar<span class="brand-accent">Bola</span></span>
-    </a>
-    <nav>
-      <a class="active" href="#lapangan">Lapangan</a>
-      <a href="#tentang">Tentang</a>
+  <header class="site-header">
+    <nav class="navbar shell" aria-label="Navigasi utama">
+      <a class="logo" href="/" aria-label="MabarBola beranda">
+        <span class="logo-ball">⚽</span><span>Mabar<span class="logo-green">Bola</span></span>
+      </a>
+      <div class="nav-links">
+        <a class="current" href="#beranda">Beranda</a>
+        <a href="#event">Cari Event</a>
+        <a href="#lapangan">Lapangan</a>
+        <a href="#cara-kerja">Cara Kerja</a>
+      </div>
+      <div class="nav-actions">
+        <button class="button button-light" type="button" data-placeholder="Fitur login belum tersedia">Masuk</button>
+        <button class="button button-dark" type="button" data-placeholder="Fitur pembuatan event belum tersedia">Buat Event <span>↗</span></button>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Buka menu">☰</button>
     </nav>
-    <button class="location-button" id="locate-button" type="button">⌖ <span>Lokasi saya</span></button>
   </header>
 
-  <main>
+  <main id="beranda">
     <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Yogyakarta &amp; Sleman</p>
-        <h1>Temukan lapangan.<br><em>Mulai mabar.</em></h1>
-        <p class="hero-text">Cari tempat bermain sepakbola dan futsal terdekat untuk pertandingan berikutnya.</p>
-      </div>
-      <div class="hero-ball" aria-hidden="true">⚽</div>
-    </section>
-
-    <section class="content" id="lapangan">
-      <aside class="venue-panel">
-        <div class="panel-heading">
-          <div>
-            <p class="section-label">Peta lapangan</p>
-            <h2>Di mana kita main?</h2>
-          </div>
-          <span class="count-badge" id="venue-count">0</span>
-        </div>
-
-        <div class="filters">
-          <label class="search-box">
-            <span>⌕</span>
-            <input id="search-input" type="search" placeholder="Cari nama atau alamat..." autocomplete="off">
-          </label>
-          <div class="filter-buttons" role="group" aria-label="Filter jenis lapangan">
-            <button class="filter-button active" data-type="Semua" type="button">Semua</button>
-            <button class="filter-button" data-type="Futsal" type="button">Futsal</button>
-            <button class="filter-button" data-type="Sepakbola" type="button">Sepakbola</button>
+      <div class="hero-shape hero-shape-one"></div>
+      <div class="hero-shape hero-shape-two"></div>
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <div class="pill-label"><span class="pulse-dot"></span> Platform mabar #1 di Jogja</div>
+          <h1>Teman mainmu,<br><span>tinggal cari.</span></h1>
+          <p>Temukan event sepakbola dan futsal di sekitarmu. Gabung, kenalan, dan main bareng tanpa ribet.</p>
+          <div class="hero-actions">
+            <a class="button button-lime" href="#event">Cari Event <span>↗</span></a>
+            <a class="button button-outline" href="#cara-kerja">Pelajari cara kerja</a>
           </div>
         </div>
-
-        <div class="venue-list" id="venue-list" aria-live="polite">
-          <div class="loading">Memuat lapangan...</div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card hero-card-top"><span>✦</span> Komunitas aktif</div>
+          <div class="hero-player">⚽</div>
+          <div class="hero-card hero-card-bottom"><strong>10</strong><span>slot<br>tersedia</span></div>
         </div>
-      </aside>
-      <div class="map-wrap">
-        <div id="map" aria-label="Peta lokasi lapangan sepakbola dan futsal"></div>
-        <div class="map-note">© OpenStreetMap contributors</div>
       </div>
     </section>
 
-    <section class="info-strip" id="tentang">
-      <div><span class="info-icon">◎</span><strong>30 lokasi</strong><span>di Yogyakarta &amp; Sleman</span></div>
-      <div><span class="info-icon">⚽</span><strong>Sepakbola &amp; futsal</strong><span>untuk semua gaya bermain</span></div>
-      <div><span class="info-icon">✦</span><strong>Siap mabar?</strong><span>Temukan tempatnya sekarang</span></div>
+    <section class="search-wrap shell" id="event">
+      <div class="search-card">
+        <div class="search-intro"><span class="search-icon">⌕</span><div><small>MULAI DARI SINI</small><strong>Cari aktivitas</strong></div></div>
+        <label class="search-field"><small>Olahraga</small><select id="sport-search"><option value="Semua">Semua olahraga</option><option value="Futsal">Futsal</option><option value="Sepakbola">Sepakbola</option></select></label>
+        <label class="search-field"><small>Lokasi</small><select id="city-search"><option>Yogyakarta &amp; Sleman</option><option>Kota Yogyakarta</option><option>Kabupaten Sleman</option></select></label>
+        <button class="button button-red search-submit" id="search-event" type="button">Temukan <span>→</span></button>
+      </div>
     </section>
+
+    <section class="stats shell" aria-label="Statistik MabarBola">
+      <div><strong>30</strong><span>Lapangan terdaftar</span></div>
+      <div><strong>2</strong><span>Kota terjangkau</span></div>
+      <div><strong>24/7</strong><span>Kesempatan mabar</span></div>
+      <div><strong>100%</strong><span>Untuk komunitas</span></div>
+    </section>
+
+    <section class="section shell" id="lapangan">
+      <div class="section-heading"><div><p class="overline">Temukan tempat main</p><h2>Lapangan pilihan<br>di sekitarmu.</h2></div><a class="text-link" href="#peta">Lihat di peta <span>↗</span></a></div>
+      <div class="venue-layout">
+        <div class="venue-list-wrap">
+          <div class="list-toolbar"><strong id="venue-count">0 lapangan</strong><div class="mini-filters"><button class="mini-filter active" data-type="Semua" type="button">Semua</button><button class="mini-filter" data-type="Futsal" type="button">Futsal</button><button class="mini-filter" data-type="Sepakbola" type="button">Bola</button></div></div>
+          <label class="list-search"><span>⌕</span><input id="search-input" type="search" placeholder="Cari nama lapangan..." autocomplete="off"></label>
+          <div class="venue-list" id="venue-list" aria-live="polite"><div class="loading">Memuat lapangan...</div></div>
+        </div>
+        <div class="map-card" id="peta"><div id="map" aria-label="Peta lapangan sepakbola dan futsal"></div><div class="map-label">© OpenStreetMap contributors</div></div>
+      </div>
+    </section>
+
+    <section class="how-section" id="cara-kerja">
+      <div class="shell"><div class="section-heading centered"><div><p class="overline">Semudah itu</p><h2>Mulai mabar dalam<br><span>tiga langkah.</span></h2></div></div>
+        <div class="steps"><div class="step"><b>01</b><div class="step-icon">✦</div><h3>Temukan event</h3><p>Pilih event yang sesuai dengan lokasi, waktu, dan level permainanmu.</p></div><div class="step"><b>02</b><div class="step-icon">＋</div><h3>Ajukan ikut</h3><p>Kenalkan dirimu dan ajukan ke pembuat event yang ingin kamu ikuti.</p></div><div class="step"><b>03</b><div class="step-icon">⚽</div><h3>Main bareng</h3><p>Setelah diterima, datang ke lapangan dan bangun koneksi baru.</p></div></div>
+      </div>
+    </section>
+
+    <section class="cta shell"><div><p class="overline">Punya rencana main?</p><h2>Bikin event pertamamu<br>dan ajak mereka.</h2></div><button class="button button-lime" type="button" data-placeholder="Fitur pembuatan event belum tersedia">Buat Event <span>↗</span></button></section>
   </main>
 
+  <footer class="footer"><div class="shell footer-inner"><a class="logo" href="/"><span class="logo-ball">⚽</span><span>Mabar<span class="logo-green">Bola</span></span></a><p>Temukan teman main. Buat momen baru.</p><span class="copyright">© 2026 MabarBola</span></div></footer>
+
+  <div class="toast" id="toast" role="status"></div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+  <script>
+    document.querySelectorAll('[data-placeholder]').forEach((button) => button.addEventListener('click', () => {
+      const toast = document.querySelector('#toast'); toast.textContent = button.dataset.placeholder; toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2400);
+    }));
+    document.querySelector('#search-event').addEventListener('click', () => {
+      document.querySelector('#lapangan').scrollIntoView({ behavior: 'smooth' });
+      const selected = document.querySelector('#sport-search').value;
+      document.querySelector(`.mini-filter[data-type="${selected}"]`)?.click();
+    });
+    document.querySelector('.menu-toggle').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('open'));
+  </script>
 </body>
 </html>

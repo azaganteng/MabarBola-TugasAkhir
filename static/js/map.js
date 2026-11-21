@@ -61,9 +61,9 @@ async function loadFields() {
   }
 }
 
-document.querySelectorAll(".filter-button").forEach((button) => {
+document.querySelectorAll(".mini-filter").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".filter-button").forEach((item) => item.classList.remove("active"));
+    document.querySelectorAll(".mini-filter").forEach((item) => item.classList.remove("active"));
     button.classList.add("active");
     selectedType = button.dataset.type;
     loadFields();
@@ -75,17 +75,20 @@ document.querySelector("#search-input").addEventListener("input", () => {
   searchTimer = setTimeout(loadFields, 250);
 });
 
-document.querySelector("#locate-button").addEventListener("click", () => {
-  if (!navigator.geolocation) return;
-  navigator.geolocation.getCurrentPosition(
-    (position) => {
-      const location = [position.coords.latitude, position.coords.longitude];
-      map.setView(location, 14);
-      L.circleMarker(location, { radius: 8, color: "#174f38", fillColor: "#c9f36b", fillOpacity: 1 })
-        .addTo(map).bindPopup("Lokasi kamu").openPopup();
-    },
-    () => alert("Lokasi tidak dapat diakses. Pastikan izin lokasi sudah diberikan.")
-  );
-});
+const locateButton = document.querySelector("#locate-button");
+if (locateButton) {
+  locateButton.addEventListener("click", () => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const location = [position.coords.latitude, position.coords.longitude];
+        map.setView(location, 14);
+        L.circleMarker(location, { radius: 8, color: "#174f38", fillColor: "#c9f36b", fillOpacity: 1 })
+          .addTo(map).bindPopup("Lokasi kamu").openPopup();
+      },
+      () => alert("Lokasi tidak dapat diakses. Pastikan izin lokasi sudah diberikan.")
+    );
+  });
+}
 
 loadFields();
