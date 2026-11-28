@@ -24,7 +24,7 @@
         <a href="#cara-kerja">Cara Kerja</a>
       </div>
       <div class="nav-actions">
-        <button class="button button-light" type="button" data-placeholder="Fitur login belum tersedia">Masuk</button>
+        <button class="button button-light" id="auth-open" type="button">Masuk</button>
         <button class="button button-dark" type="button" data-placeholder="Fitur pembuatan event belum tersedia">Buat Event <span>↗</span></button>
       </div>
       <button class="menu-toggle" type="button" aria-label="Buka menu">☰</button>
@@ -92,6 +92,39 @@
 
   <footer class="footer"><div class="shell footer-inner"><a class="logo" href="/"><span class="logo-ball">⚽</span><span>Mabar<span class="logo-green">Bola</span></span></a><p>Temukan teman main. Buat momen baru.</p><span class="copyright">© 2026 MabarBola</span></div></footer>
 
+  <div class="auth-modal" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title" hidden>
+    <div class="auth-card">
+      <button class="auth-close" id="auth-close" type="button" aria-label="Tutup">×</button>
+      <div class="auth-heading">
+        <span class="auth-mark">⚽</span>
+        <h2 id="auth-title">MASUK</h2>
+      </div>
+
+      <form class="auth-form" id="login-form">
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" placeholder="nama@email.com" autocomplete="email" required>
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" placeholder="Masukkan password" autocomplete="current-password" required>
+        <button class="button button-red auth-submit" type="submit">Masuk</button>
+      </form>
+
+      <form class="auth-form" id="register-form" hidden>
+        <label for="register-name">Nama lengkap</label>
+        <input id="register-name" type="text" placeholder="Nama lengkapmu" autocomplete="name" required>
+        <label for="register-email">Email</label>
+        <input id="register-email" type="email" placeholder="nama@email.com" autocomplete="email" required>
+        <label for="register-password">Password</label>
+        <input id="register-password" type="password" placeholder="Buat password" autocomplete="new-password" required>
+        <label for="register-confirm-password">Konfirmasi password</label>
+        <input id="register-confirm-password" type="password" placeholder="Ulangi password" autocomplete="new-password" required>
+        <button class="button button-red auth-submit" type="submit">Daftar</button>
+      </form>
+
+      <div class="auth-switch" id="login-switch">Belum punya akun? <button type="button" data-auth-view="register">Daftar</button></div>
+      <div class="auth-switch" id="register-switch" hidden>Sudah punya akun? <button type="button" data-auth-view="login">Masuk</button></div>
+    </div>
+  </div>
+
   <div class="toast" id="toast" role="status"></div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="{{ url_for('static', filename='js/map.js') }}"></script>
@@ -106,6 +139,46 @@
       document.querySelector(`.mini-filter[data-type="${selected}"]`)?.click();
     });
     document.querySelector('.menu-toggle').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('open'));
+
+    const authModal = document.querySelector('#auth-modal');
+    const loginForm = document.querySelector('#login-form');
+    const registerForm = document.querySelector('#register-form');
+    const loginSwitch = document.querySelector('#login-switch');
+    const registerSwitch = document.querySelector('#register-switch');
+    const authTitle = document.querySelector('#auth-title');
+
+    function showAuthView(view) {
+      const isRegister = view === 'register';
+      loginForm.hidden = isRegister;
+      registerForm.hidden = !isRegister;
+      loginSwitch.hidden = isRegister;
+      registerSwitch.hidden = !isRegister;
+      authTitle.textContent = isRegister ? 'DAFTAR' : 'MASUK';
+      (isRegister ? document.querySelector('#register-name') : document.querySelector('#login-email')).focus();
+    }
+
+    document.querySelector('#auth-open').addEventListener('click', () => {
+      showAuthView('login');
+      authModal.hidden = false;
+      document.body.classList.add('modal-open');
+    });
+    document.querySelector('#auth-close').addEventListener('click', closeAuth);
+    authModal.addEventListener('click', (event) => { if (event.target === authModal) closeAuth(); });
+    document.querySelectorAll('[data-auth-view]').forEach((button) => button.addEventListener('click', () => showAuthView(button.dataset.authView)));
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !authModal.hidden) closeAuth(); });
+
+    function closeAuth() {
+      authModal.hidden = true;
+      document.body.classList.remove('modal-open');
+    }
+
+    [loginForm, registerForm].forEach((form) => form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const toast = document.querySelector('#toast');
+      toast.textContent = form === loginForm ? 'Fitur login segera tersedia.' : 'Fitur pendaftaran segera tersedia.';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2400);
+    }));
   </script>
 </body>
 </html>

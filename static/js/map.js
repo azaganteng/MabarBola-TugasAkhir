@@ -83,7 +83,7 @@ if (locateButton) {
       (position) => {
         const location = [position.coords.latitude, position.coords.longitude];
         map.setView(location, 14);
-        L.circleMarker(location, { radius: 8, color: "#174f38", fillColor: "#c9f36b", fillOpacity: 1 })
+        L.circleMarker(location, { radius: 8, color: "#F42902", fillColor: "#83FD80", fillOpacity: 1 })
           .addTo(map).bindPopup("Lokasi kamu").openPopup();
       },
       () => alert("Lokasi tidak dapat diakses. Pastikan izin lokasi sudah diberikan.")
